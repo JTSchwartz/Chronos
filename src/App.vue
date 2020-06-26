@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<v-app>
+		<Header/>
+		<v-container fluid class="pa-0 fill-height">
+			<v-row no-gutters style="height: 100%">
+				<Calendar/>
+				<Sidebar/>
+			</v-row>
+		</v-container>
+	</v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	import Calendar from "./components/Calendar";
+	import Header   from "./components/Header";
+	import Sidebar  from "./components/Sidebar";
+	
+	export default {
+		name:       "App",
+		components: {
+			Calendar,
+			Header,
+			Sidebar
+		}
+	}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+	body {
+		overflow-y: hidden;
+	}
 </style>
